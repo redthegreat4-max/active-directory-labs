@@ -4,11 +4,11 @@
 This project demonstrates the creation and management of Active Directory
 users, security groups, and organizational units (OUs) in a Windows Server
 environment. Administration was performed using both Active Directory Users
-and Computers (ADUC) and PowerShell.
+and Computers (ADUC).
 
 Using both GUI and command-line tools reflects real-world enterprise IT
 workflows, where ADUC is commonly used for daily administration and
-PowerShell is used for automation and scalability.
+
 
 ---
 
@@ -16,7 +16,6 @@ PowerShell is used for automation and scalability.
 - Windows Server 2019 / 2022
 - Active Directory Domain Services (AD DS)
 - Active Directory Users and Computers (ADUC)
-- PowerShell
 - Windows 11 domain-joined clients
 
 ---
