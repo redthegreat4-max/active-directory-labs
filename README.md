@@ -8,5 +8,4 @@ using Windows Server, Windows 10, and Windows 11.
 - Active Directory Domain Services (AD DS)
 - Windows 10 & Windows 11 Administration
 - Group Policy Management
-- PowerShell Automation
 - IT Documentation
