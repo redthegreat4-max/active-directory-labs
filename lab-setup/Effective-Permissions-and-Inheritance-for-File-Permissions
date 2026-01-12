@@ -1,0 +1,171 @@
+# Effective Permissions and Inheritance for File Permissions
+
+## Overview
+This lab demonstrates how effective permissions are calculated in Windows
+file systems using NTFS permissions. It covers explicit permissions,
+inherited permissions, group membership, and deny permissions, along with
+real-world scenarios where inheritance must be modified to protect
+sensitive data.
+
+Understanding effective permissions is critical for ensuring users have
+appropriate access while maintaining security.
+
+---
+
+## What Are Effective Permissions?
+Effective permissions represent the actual permissions a user or group has
+on a file or folder. These permissions are determined by several factors
+working together.
+
+Effective permissions come from:
+- **Explicit permissions** – Permissions assigned directly to a user or group
+- **Inherited permissions** – Permissions passed down from a parent folder
+- **Group memberships** – Permissions granted through group membership
+- **Deny permissions** – Permissions that override allowed permissions
+
+---
+
+## Permission Inheritance
+By default, permissions applied to a parent folder are inherited by all
+subfolders and files. This means that if a user has access to a parent
+folder, they may automatically gain access to subfolders.
+
+Inheritance can be disabled when more restrictive access is required.
+
+---
+
+## Explicit Deny Permissions
+An explicit deny permission is manually applied to a user or group and
+**overrides all allow permissions**, even if the user belongs to another
+group that has access.
+
+Deny permissions should be used carefully due to their high priority.
+
+---
+
+## Real-World Application Example
+
+### Scenario
+The HR department contains sensitive subfolders such as:
+- Payroll
+- Contracts
+
+All HR employees have access to the main HR folder due to inherited
+permissions. However, these sensitive subfolders should only be accessible
+by the IT department.
+
+### Solution
+Permission inheritance was disabled on the sensitive subfolders, and
+explicit permissions were applied to restrict access.
+
+---
+
+## Homelab 1: Restricting Access Using Inheritance
+
+### Scenario
+A **Common** folder exists with Full Control granted to everyone on the
+network. The **Project** group should only have access to a specific
+subfolder called **Projects**, not the entire Common directory.
+
+---
+
+### Folder Setup
+1. Open **File Explorer**
+2. Navigate to **Local Disk**
+3. Create a folder named **Common**
+4. Inside **Common**, create:
+   - Events
+   - Projects
+
+---
+
+### Share Permissions (Common Folder)
+1. Right-click **Common** → Properties
+2. Open **Sharing → Advanced Sharing**
+3. Enable **Share this folder**
+4. Assign **Everyone** → Full Control
+
+---
+
+### NTFS Permissions (Common Folder)
+1. Open **Security** tab
+2. Assign **Everyone** → Full Control
+
+---
+
+### Restricting the Projects Subfolder
+1. Right-click **Projects** → Properties
+2. Open **Security → Advanced**
+3. Select **Disable inheritance**
+4. Choose **Convert inherited permissions into explicit permissions**
+5. Remove **Everyone**
+6. Add **Project Group**
+7. Assign **Full Control**
+
+**Result:**  
+Only members of the Project group can access the Projects folder.
+
+---
+
+## Homelab 2: Implementing Explicit Deny Permissions
+
+### Scenario
+All employees have Read and Write access to a shared folder (**Project2**).
+However, a user named **Sam John** must be blocked from accessing the
+**Confidential** subfolder due to sensitive financial data.
+
+---
+
+### Folder Setup
+1. Create a folder named **Project2**
+2. Inside **Project2**, create:
+   - Confidential
+   - Materials
+
+---
+
+### Share Permissions (Project2)
+1. Right-click **Project2** → Properties
+2. Open **Sharing → Advanced Sharing**
+3. Assign **Everyone** → Read and Write
+
+---
+
+### NTFS Permissions (Confidential Folder)
+1. Right-click **Confidential** → Properties
+2. Open **Security**
+3. Click **Edit → Add**
+4. Add user **Sam John**
+5. Select **Deny → Read**
+
+---
+
+### Permission Behavior
+If a user belongs to multiple groups:
+- **Allow permissions** grant access
+- **Deny permissions** override all allow permissions
+
+**Result:**  
+Sam John is denied access to the Confidential folder, even if he belongs to
+a group with access.
+
+---
+
+## Skills Demonstrated
+- NTFS Permission Management
+- Effective Permissions Analysis
+- Permission Inheritance and Overrides
+- Explicit Allow and Deny Permissions
+- Access Control Best Practices
+- Windows File Server Administration
+- IT Documentation
+
+---
+
+## Result
+Effective permissions were successfully configured using inheritance,
+explicit permissions, and deny rules to control access to sensitive data.
+This lab demonstrates real-world permission management techniques used in
+enterprise Windows environments.
+
+
