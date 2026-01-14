@@ -1,0 +1,118 @@
+# Access-Based Enumeration (ABE) Lab  
+**Windows Server 2025**
+
+---
+
+## Overview
+Access-Based Enumeration (ABE) is a Windows Server feature that hides files and folders from users who do not have permission to access them. This lab demonstrates how ABE can be used to secure departmental file shares so users only see folders relevant to their role.
+
+---
+
+## Why Access-Based Enumeration Is Important
+
+- Enhances security by hiding unauthorized folders
+- Prevents unauthorized access attempts
+- Improves user experience by showing only relevant data
+- Protects sensitive information (HR and confidential data)
+- Reduces failed access attempts, logs, and alerts
+- Helps reduce helpdesk tickets caused by access confusion
+
+---
+
+## How Access-Based Enumeration Works
+
+ABE relies on **NTFS permissions** combined with **share permissions**.
+
+1. User logs into a domain-joined system
+2. User attempts to access a shared folder
+3. NTFS permissions are evaluated
+4. Access-Based Enumeration filters folder visibility
+5. Folders without permissions are hidden from the user
+
+**No permission = No visibility**
+
+---
+
+## Important Notes on ABE
+
+- ABE does not change permissions; it only controls visibility
+- Works only on **NTFS volumes**
+- Not supported on:
+  - FAT32
+  - exFAT
+  - APFS
+- ABE does not protect files if NTFS permissions are misconfigured
+
+---
+
+## Lab Scenario (Real-World Simulation)
+
+You are simulating a departmental file server for **HR** and **IT** departments.  
+Users should only see folders that belong to their department.
+
+---
+
+## Lab Configuration
+
+### 1. Active Directory Setup
+- Create security groups:
+  - `HR`
+  - `IT`
+- Create user accounts and assign them to the appropriate group
+
+---
+
+### 2. Folder Structure
+
+Create the following directory structure on the file server:
+
+
+---
+
+### 3. NTFS Permissions
+
+1. Right-click the **DeptShares** folder  
+2. Select **Properties → Security → Advanced**
+3. Disable inheritance
+4. Remove unnecessary permissions
+5. Assign permissions:
+   - `HR` group → Full Control on **HR** folder
+   - `IT` group → Full Control on **IT** folder
+6. Ensure each group has **no access** to the other department folder
+
+---
+
+### 4. Share Permissions
+
+1. Right-click **DeptShares**
+2. Go to **Properties → Sharing → Advanced Sharing**
+3. Enable sharing
+4. Click **Permissions**
+5. Remove **Everyone**
+6. Add:
+   - `HR` group → Read
+   - `IT` group → Read
+
+> NTFS permissions control access, share permissions control connectivity.
+
+---
+
+### 5. Enable Access-Based Enumeration (ABE)
+
+1. Open **Server Manager**
+2. Navigate to:  
+   **File and Storage Services → Shares**
+3. Select the **DeptShares** share
+4. Open **Properties → Settings**
+5. Enable **Access-Based Enumeration**
+6. Apply the changes
+
+---
+
+### 6. Client Testing
+
+- Log into a **Windows 10 domain-joined client**
+- Sign in using an **IT user account**
+- Access the file server:
+
+`` #### Expected Results - IT users see **only the IT folder** - HR folder is hidden - HR users see **only the HR folder** --- ## Result Access-Based Enumeration was successfully implemented to restrict folder visibility based on NTFS permissions. This configuration improves security, reduces user confusion, and mirrors a real-world enterprise file server setup. --- --- ``` ---
