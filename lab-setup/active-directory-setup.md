@@ -46,7 +46,7 @@ Units (OUs) for department-based separation.
    - Users
 
 
-!["Creating Organizational Units"](creating-organizational-Units.png)
+!["Creating Organizational Units"](creating-organizational-units.png)
 ## Creating Security Groups (ADUC)
 
 Security groups were created to manage access based on job roles.
