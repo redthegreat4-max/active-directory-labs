@@ -46,8 +46,7 @@ Units (OUs) for department-based separation.
    - Users
 
 
----
-
+!["Creating Organizational Units"]()
 ## Creating Security Groups (ADUC)
 
 Security groups were created to manage access based on job roles.
@@ -84,3 +83,7 @@ User accounts were created within the appropriate departmental OU.
 
 ### Results
 A functional Active Directory environment was successfully created with well-structured users, groups, and organizational units. Administration was performed using Active Directory Users and Computers (ADUC), demonstrating practical enterprise IT skills applicable to Desktop Support and Junior System Administrator roles.
+
+[def]: screenshots/Creating-Organizational-Units.png
+[def2]: screenshots
+[def3]: screenshots/Creating-Organizational-Units.png
