@@ -9,20 +9,8 @@ controlled based on user roles and business requirements.
 The lab focuses on applying the principle of least privilege while ensuring
 users can access shared folders efficiently.
 
+
 ---
-
-## File Sharing vs Network Sharing
-
-### Network Share Permissions
-- Control access when folders are accessed over the network
-- Basic permission levels: Read, Change, Full Control
-- Applied through the **Sharing** tab
-
-### NTFS Permissions
-- Control access at the file system level
-- More granular permissions (Read, Write, Modify, Full Control)
-- Applied through the **Security** tab
-- Effective permissions are the most restrictive combination of both
 
 ---
 
