@@ -8,43 +8,6 @@ Access-Based Enumeration (ABE) is a Windows Server feature that hides files and 
 
 ---
 
-## Why Access-Based Enumeration Is Important
-
-- Enhances security by hiding unauthorized folders
-- Prevents unauthorized access attempts
-- Improves user experience by showing only relevant data
-- Protects sensitive information (HR and confidential data)
-- Reduces failed access attempts, logs, and alerts
-- Helps reduce helpdesk tickets caused by access confusion
-
----
-
-## How Access-Based Enumeration Works
-
-ABE relies on **NTFS permissions** combined with **share permissions**.
-
-1. User logs into a domain-joined system
-2. User attempts to access a shared folder
-3. NTFS permissions are evaluated
-4. Access-Based Enumeration filters folder visibility
-5. Folders without permissions are hidden from the user
-
-**No permission = No visibility**
-
----
-
-## Important Notes on ABE
-
-- ABE does not change permissions; it only controls visibility
-- Works only on **NTFS volumes**
-- Not supported on:
-  - FAT32
-  - exFAT
-  - APFS
-- ABE does not protect files if NTFS permissions are misconfigured
-
----
-
 ## Lab Scenario (Real-World Simulation)
 
 You are simulating a departmental file server for **HR** and **IT** departments.  
@@ -111,7 +74,7 @@ Create the following directory structure on the file server:
 
 ### 6. Client Testing
 
-- Log into a **Windows 10 domain-joined client**
+- Log into a **Windows 11 domain-joined client**
 - Sign in using an **IT user account**
 - Access the file server:
 
