@@ -1,6 +1,6 @@
 # Domain Controller Setup
 
-## Objective
+## Overview
 Document the installation and configuration of a Windows Server
 Domain Controller for an Active Directory lab.
 
