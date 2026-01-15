@@ -10,55 +10,7 @@ sensitive data.
 Understanding effective permissions is critical for ensuring users have
 appropriate access while maintaining security.
 
----
 
-## What Are Effective Permissions?
-Effective permissions represent the actual permissions a user or group has
-on a file or folder. These permissions are determined by several factors
-working together.
-
-Effective permissions come from:
-- **Explicit permissions** – Permissions assigned directly to a user or group
-- **Inherited permissions** – Permissions passed down from a parent folder
-- **Group memberships** – Permissions granted through group membership
-- **Deny permissions** – Permissions that override allowed permissions
-
----
-
-## Permission Inheritance
-By default, permissions applied to a parent folder are inherited by all
-subfolders and files. This means that if a user has access to a parent
-folder, they may automatically gain access to subfolders.
-
-Inheritance can be disabled when more restrictive access is required.
-
----
-
-## Explicit Deny Permissions
-An explicit deny permission is manually applied to a user or group and
-**overrides all allow permissions**, even if the user belongs to another
-group that has access.
-
-Deny permissions should be used carefully due to their high priority.
-
----
-
-## Real-World Application Example
-
-### Scenario
-The HR department contains sensitive subfolders such as:
-- Payroll
-- Contracts
-
-All HR employees have access to the main HR folder due to inherited
-permissions. However, these sensitive subfolders should only be accessible
-by the IT department.
-
-### Solution
-Permission inheritance was disabled on the sensitive subfolders, and
-explicit permissions were applied to restrict access.
-
----
 
 ## Homelab 1: Restricting Access Using Inheritance
 
