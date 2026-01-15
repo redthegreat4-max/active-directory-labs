@@ -78,4 +78,4 @@ Create the following directory structure on the file server:
 - Sign in using an **IT user account**
 - Access the file server:
 
-`` #### Expected Results - IT users see **only the IT folder** - HR folder is hidden - HR users see **only the HR folder** --- ## Result Access-Based Enumeration was successfully implemented to restrict folder visibility based on NTFS permissions. This configuration improves security, reduces user confusion, and mirrors a real-world enterprise file server setup. --- --- ``` ---
+`` #### Results - IT users see **only the IT folder** - HR folder is hidden - HR users see **only the HR folder** --- ## Result Access-Based Enumeration was successfully implemented to restrict folder visibility based on NTFS permissions. This configuration improves security, reduces user confusion, and mirrors a real-world enterprise file server setup. --- --- ``` ---
