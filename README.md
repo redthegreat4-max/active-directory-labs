@@ -18,6 +18,7 @@ Organizational Units, ensuring consistent configuration and improved
 management of domain-joined  Windows 11 systems.
 
 - Domain Controller
+
 - NTFS and Share
 Windows file sharing and NTFS permissions were successfully configured to
 meet multiple business scenarios. Access was controlled using security
@@ -25,6 +26,12 @@ groups and permission layering to provide secure and efficient file access
 across departments.
 
 - Access Based Enumeration
+IT users see **only the IT folder** - HR folder is hidden - HR users see **only the HR folder** --- ## Result Access-Based Enumeration was successfully implemented to restrict folder visibility based on NTFS permissions. This configuration improves security, reduces user confusion, and mirrors a real-world enterprise file server setup.
 
 - Effective Permissions
+Effective permissions were successfully configured using inheritance,
+explicit permissions, and deny rules to control access to sensitive data.
+This lab demonstrates real-world permission management techniques used in
+enterprise Windows environments.
+
 - IT Documentation
