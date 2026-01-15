@@ -7,6 +7,12 @@
 Access-Based Enumeration (ABE) is a Windows Server feature that hides files and folders from users who do not have permission to access them. This lab demonstrates how ABE can be used to secure departmental file shares so users only see folders relevant to their role.
 
 ---
+## Environment
+- Windows Server 2019/2022
+- Windows 11 client
+- Active Directory Server Manager
+- NTFS and Share Permissions
+- Effective Permissions and Inheritance
 
 ## Lab Scenario (Real-World Simulation)
 
