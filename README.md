@@ -1,7 +1,7 @@
 # Active Directory Labs – Windows 11
 
 ## Overview
-This lab simulates a small enterprise Active Directory environment. I deployed a Windows Server domain contoller, joined Windows 11 Pro client machines to the domain, created users and groups, and enforced security and configuration setting using Group Policy. The goal was to gain hands on experience with real world Windows domain administration and access control.
+This lab simulates a small enterprise Active Directory environment. I deployed a Windows Server domain contoller, joined Windows 11 Pro client machines to the domain, created users and groups, and enforced security and configuration setting using Group Policy. The goal was to gain hands on experience with real world Windows domain administration and access control. Screenshots are actively being added as the lab is being finalize.
 
 ## Skills Demonstrated
 - Active Directory Domain Services (AD DS)
