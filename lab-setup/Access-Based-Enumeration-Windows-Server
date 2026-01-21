@@ -34,7 +34,7 @@ Users should only see folders that belong to their department.
 ### 2. Folder Structure
 
 Create the following directory structure on the file server:
-
+**Purpose**  Simulating a file server for HR an IT Departments. You want users from HR to only see HR related folders and IT to only see theirs
 
 ---
 
