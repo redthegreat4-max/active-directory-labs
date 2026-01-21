@@ -63,7 +63,7 @@ Only members of the Project group can access the Projects folder.
 
 ### Scenario
 All employees have Read and Write access to a shared folder (**Project2**).
-However, a user named **Sam John** must be blocked from accessing the
+However, a user named **Jacob Lang** must be blocked from accessing the
 **Confidential** subfolder due to sensitive financial data.
 
 ---
@@ -87,7 +87,7 @@ However, a user named **Sam John** must be blocked from accessing the
 1. Right-click **Confidential** → Properties
 2. Open **Security**
 3. Click **Edit → Add**
-4. Add user **Sam John**
+4. Add user **Jacob Lang**
 5. Select **Deny → Read**
 
 ---
@@ -98,7 +98,7 @@ If a user belongs to multiple groups:
 - **Deny permissions** override all allow permissions
 
 **Result:**  
-Sam John is denied access to the Confidential folder, even if he belongs to
+Jacob Lang is denied access to the Confidential folder, even if he belongs to
 a group with access.
 
 ---
